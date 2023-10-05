@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import HomeScreen from './src/shared/infrastructure/framework/screens/HomeScreen';
+import WelcomeRoute from './src/shared/infrastructure/framework/router/welcome.route';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <HomeScreen />
+      <WelcomeRoute />
     </NavigationContainer>
   );
 }
