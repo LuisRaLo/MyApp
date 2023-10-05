@@ -10,8 +10,11 @@ export default function HomeScreen({route, navigation}: Props) {
   const params = route.params;
 
   return (
-    <BackgroundComponent paddingX={30} paddingY={20}>
-      <Text>asdkjask</Text>
+    <BackgroundComponent paddingX={30} paddingY={20} scrollable>
+      <VStack>
+        <Text>Home</Text>
+        <Text>Welcome</Text>
+      </VStack>
     </BackgroundComponent>
   );
 }
