@@ -1,10 +1,11 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import {VStack, Text} from '@gluestack-ui/themed';
+import BackgroundComponent from '../components/BackgroundComponent';
 
 export default function HomeScreen() {
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
-  )
+    <BackgroundComponent paddingX={30} paddingY={20}>
+      <Text>asdkjask</Text>
+    </BackgroundComponent>
+  );
 }
