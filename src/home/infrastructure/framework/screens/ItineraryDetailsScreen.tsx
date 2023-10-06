@@ -16,7 +16,7 @@ export default function ItineraryDetailsScreen({route, navigation}: Props) {
   const {itinerary, titleToSpanish} = useItinerary(type);
 
   return (
-    <BackgroundComponent>
+    <BackgroundComponent scrollable>
       <BackArrowComponent navigation={navigation} />
       <Center
         backgroundColor="#5BC900"
