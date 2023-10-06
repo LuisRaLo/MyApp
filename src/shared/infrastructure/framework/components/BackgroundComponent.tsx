@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, ReactNode, useState} from 'react';
 import {
   KeyboardAvoidingView,
   ScrollView,
@@ -6,16 +6,26 @@ import {
   Text,
   VStack,
 } from '@gluestack-ui/themed';
-import {Platform} from 'react-native';
+import {FlexAlignType, Platform} from 'react-native';
 
 type BackgroundComponentProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   paddingX?: number;
   paddingY?: number;
   marginX?: number;
   marginY?: number;
   statusBar?: boolean;
   scrollable?: boolean;
+  justifyContent?:
+    | 'center'
+    | 'flex-start'
+    | 'flex-end'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly'
+    | undefined;
+  alignItems?: FlexAlignType | undefined;
+  contentContainerStyle?: any;
 };
 
 export default function BackgroundComponent({
@@ -26,6 +36,8 @@ export default function BackgroundComponent({
   marginY,
   statusBar,
   scrollable,
+  justifyContent,
+  alignItems,
 }: BackgroundComponentProps) {
   const ScrollComponent = scrollable ? ScrollView : Fragment;
 
@@ -35,16 +47,18 @@ export default function BackgroundComponent({
 
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'height' : 'height'}
-        style={{flex: 1, zIndex: 999}}>
+        flex={1}
+        zIndex={-999}>
         <ScrollComponent>
           <VStack
+            flex={1}
+            justifyContent={justifyContent}
+            alignItems={alignItems}
             paddingHorizontal={paddingX}
             paddingVertical={paddingY}
             marginHorizontal={marginX}
             marginVertical={marginY}
-            flex={1}
             backgroundColor="white">
-            <Text>Background Component</Text>
             {children}
           </VStack>
         </ScrollComponent>
