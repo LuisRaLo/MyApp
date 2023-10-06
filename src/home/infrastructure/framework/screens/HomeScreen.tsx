@@ -8,9 +8,7 @@ import MenuComponent from '../components/MenuComponent';
 
 interface Props extends StackScreenProps<WelcomeStackParamList, 'Home'> {}
 
-export default function HomeScreen({route, navigation}: Props) {
-  const params = route.params;
-
+export default function HomeScreen({navigation}: Props) {
   return (
     <BackgroundComponent>
       <LinearGradient colors={['rgba(120, 170, 1, .6)', 'rgba(0, 0, 0, 0)']}>
@@ -20,7 +18,9 @@ export default function HomeScreen({route, navigation}: Props) {
       </LinearGradient>
 
       <Center flex={1} justifyContent="center" alignItems="center" mt={'$5'}>
-        <Text fontSize={'$2xl'} mb={30}>Qué planes tienes para hoy </Text>
+        <Text fontSize={'$2xl'} mb={30}>
+          Qué planes tienes para hoy{' '}
+        </Text>
         <MenuComponent navigation={navigation} />
       </Center>
     </BackgroundComponent>

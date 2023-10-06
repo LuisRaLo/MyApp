@@ -20,12 +20,10 @@ export default function MenuComponent({navigation}: MenuComponentsProps) {
           <Center justifyContent="center" alignItems="center">
             <Image
               size="xl"
-              source={{
-                uri: 'https://source.unsplash.com/random',
-              }}
+              source={require('../../../../shared/infrastructure/framework/assets/images/lugares.png')}
               alt="image"
             />
-            <Text fontSize={'$2xl'} mt={'$2'}>
+            <Text fontSize={'$xl'} mt={'$2'}>
               Lugares
             </Text>
           </Center>
@@ -40,12 +38,10 @@ export default function MenuComponent({navigation}: MenuComponentsProps) {
           <Center justifyContent="center" alignItems="center">
             <Image
               size="xl"
-              source={{
-                uri: 'https://source.unsplash.com/random',
-              }}
+              source={require('../../../../shared/infrastructure/framework/assets/images/evento.png')}
               alt="image"
             />
-            <Text fontSize={'$2xl'} mt={'$2'}>
+            <Text fontSize={'$xl'} mt={'$2'}>
               Eventos
             </Text>
           </Center>
@@ -62,12 +58,10 @@ export default function MenuComponent({navigation}: MenuComponentsProps) {
           <Center justifyContent="center" alignItems="center">
             <Image
               size="xl"
-              source={{
-                uri: 'https://source.unsplash.com/random',
-              }}
+              source={require('../../../../shared/infrastructure/framework/assets/images/edificio.png')}
               alt="image"
             />
-            <Text fontSize={'$2xl'} mt={'$2'}>
+            <Text fontSize={'$xl'} mt={'$2'}>
               Empresas
             </Text>
           </Center>
@@ -82,12 +76,10 @@ export default function MenuComponent({navigation}: MenuComponentsProps) {
           <Center justifyContent="center" alignItems="center">
             <Image
               size="xl"
-              source={{
-                uri: 'https://source.unsplash.com/random',
-              }}
+              source={require('../../../../shared/infrastructure/framework/assets/images/restaurantes_parqueaderos.png')}
               alt="image"
             />
-            <Text fontSize={'$2xl'} mt={'$2'}>
+            <Text fontSize={'$xl'} mt={'$2'}>
               Restaurantes
             </Text>
           </Center>
