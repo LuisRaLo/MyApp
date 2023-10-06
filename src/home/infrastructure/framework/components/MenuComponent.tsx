@@ -1,6 +1,7 @@
-import {HStack, Image, VStack} from '@gluestack-ui/themed';
+import {Center, HStack, Image, Text, VStack} from '@gluestack-ui/themed';
 import React, {Fragment} from 'react';
 import {TouchableOpacity} from 'react-native';
+import {TypeItenaryEnum} from '../../../domain/repository/ItineraryRepository';
 
 type MenuComponentsProps = {
   navigation: any;
@@ -10,54 +11,86 @@ export default function MenuComponent({navigation}: MenuComponentsProps) {
   return (
     <Fragment>
       <HStack space="lg">
-        <TouchableOpacity onPress={() => console.log('click')}>
-          <VStack space="lg">
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('ItineraryDetails', {
+              type: TypeItenaryEnum.location,
+            })
+          }>
+          <Center justifyContent="center" alignItems="center">
             <Image
               size="xl"
               source={{
-                uri: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+                uri: 'https://source.unsplash.com/random',
               }}
               alt="image"
             />
-          </VStack>
+            <Text fontSize={'$2xl'} mt={'$2'}>
+              Lugares
+            </Text>
+          </Center>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => console.log('click')}>
-          <VStack>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('ItineraryDetails', {
+              type: TypeItenaryEnum.event,
+            })
+          }>
+          <Center justifyContent="center" alignItems="center">
             <Image
               size="xl"
               source={{
-                uri: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+                uri: 'https://source.unsplash.com/random',
               }}
               alt="image"
             />
-          </VStack>
+            <Text fontSize={'$2xl'} mt={'$2'}>
+              Eventos
+            </Text>
+          </Center>
         </TouchableOpacity>
       </HStack>
 
       <HStack space="lg" mt={'$5'}>
-        <TouchableOpacity onPress={() => console.log('click')}>
-          <VStack space="lg">
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('ItineraryDetails', {
+              type: TypeItenaryEnum.enterprise,
+            })
+          }>
+          <Center justifyContent="center" alignItems="center">
             <Image
               size="xl"
               source={{
-                uri: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+                uri: 'https://source.unsplash.com/random',
               }}
               alt="image"
             />
-          </VStack>
+            <Text fontSize={'$2xl'} mt={'$2'}>
+              Empresas
+            </Text>
+          </Center>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => console.log('click')}>
-          <VStack>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('ItineraryDetails', {
+              type: TypeItenaryEnum.restaurant,
+            })
+          }>
+          <Center justifyContent="center" alignItems="center">
             <Image
               size="xl"
               source={{
-                uri: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+                uri: 'https://source.unsplash.com/random',
               }}
               alt="image"
             />
-          </VStack>
+            <Text fontSize={'$2xl'} mt={'$2'}>
+              Restaurantes
+            </Text>
+          </Center>
         </TouchableOpacity>
       </HStack>
     </Fragment>

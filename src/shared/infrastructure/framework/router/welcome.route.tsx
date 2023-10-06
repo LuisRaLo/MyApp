@@ -1,8 +1,11 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../../../../home/infrastructure/framework/screens/HomeScreen';
+import { TypeItenaryEnum } from '../../../../home/domain/repository/ItineraryRepository';
+import ItineraryDetailsScreen from '../../../../home/infrastructure/framework/screens/ItineraryDetailsScreen';
 
 export type WelcomeStackParamList = {
   Home: undefined;
+  ItineraryDetails: {type: TypeItenaryEnum};
 };
 
 const Stack = createStackNavigator<WelcomeStackParamList>();
@@ -22,6 +25,11 @@ export default function WelcomeRoute() {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ItineraryDetails"
+        component={ItineraryDetailsScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
