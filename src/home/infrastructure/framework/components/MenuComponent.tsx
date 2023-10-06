@@ -17,7 +17,7 @@ export default function MenuComponent({navigation}: MenuComponentsProps) {
               type: TypeItenaryEnum.location,
             })
           }>
-          <Center justifyContent="center" alignItems="center">
+          <Center justifyContent="center" alignItems="center" mr={'$5'}>
             <Image
               size="xl"
               source={require('../../../../shared/infrastructure/framework/assets/images/lugares.png')}
@@ -55,7 +55,7 @@ export default function MenuComponent({navigation}: MenuComponentsProps) {
               type: TypeItenaryEnum.enterprise,
             })
           }>
-          <Center justifyContent="center" alignItems="center">
+          <Center justifyContent="center" alignItems="center" mr={'$5'}>
             <Image
               size="xl"
               source={require('../../../../shared/infrastructure/framework/assets/images/edificio.png')}

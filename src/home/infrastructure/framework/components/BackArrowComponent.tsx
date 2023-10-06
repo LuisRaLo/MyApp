@@ -1,6 +1,8 @@
-import {View, Text, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import React, {Fragment} from 'react';
-import {Image, VStack} from '@gluestack-ui/themed';
+import {VStack, Text} from '@gluestack-ui/themed';
+//@ts-ignore
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 type Props = {
   navigation: any;
@@ -9,16 +11,11 @@ type Props = {
 export default function BackArrowComponent({navigation}: Props) {
   return (
     <Fragment>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <VStack position="absolute" top={0} left={0} mt={'$5'} ml={'$5'}>
-          <Image
-            source={require('../../../../shared/infrastructure/framework/assets/images/arrow-back-8-16.png')}
-            alt="profile"
-            w={'$12'}
-            h={'$12'}
-          />
-        </VStack>
-      </TouchableOpacity>
+      <VStack position={'absolute'} top={10} left={20} zIndex={1}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Icon name="arrow-left" size={40} />
+        </TouchableOpacity>
+      </VStack>
     </Fragment>
   );
 }
