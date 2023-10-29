@@ -1,7 +1,7 @@
-import {Center, HStack, Image, Text, VStack} from '@gluestack-ui/themed';
+import {Center, HStack, Image, Text} from '@gluestack-ui/themed';
 import React, {Fragment} from 'react';
 import {TouchableOpacity} from 'react-native';
-import {TypeItenaryEnum} from '../../../domain/repository/ItineraryRepository';
+import {TypeItenaryEnum} from '../../../../shared/domain/repository/ItineraryRepository';
 
 type MenuComponentsProps = {
   navigation: any;
@@ -14,7 +14,7 @@ export default function MenuComponent({navigation}: MenuComponentsProps) {
         <TouchableOpacity
           onPress={() =>
             navigation.navigate('ItineraryDetails', {
-              type: TypeItenaryEnum.location,
+              type: TypeItenaryEnum.places,
             })
           }>
           <Center justifyContent="center" alignItems="center" mr={'$5'}>
@@ -32,7 +32,7 @@ export default function MenuComponent({navigation}: MenuComponentsProps) {
         <TouchableOpacity
           onPress={() =>
             navigation.navigate('ItineraryDetails', {
-              type: TypeItenaryEnum.event,
+              type: TypeItenaryEnum.events,
             })
           }>
           <Center justifyContent="center" alignItems="center">
@@ -52,7 +52,7 @@ export default function MenuComponent({navigation}: MenuComponentsProps) {
         <TouchableOpacity
           onPress={() =>
             navigation.navigate('ItineraryDetails', {
-              type: TypeItenaryEnum.enterprise,
+              type: TypeItenaryEnum.enterprises,
             })
           }>
           <Center justifyContent="center" alignItems="center" mr={'$5'}>
@@ -70,7 +70,7 @@ export default function MenuComponent({navigation}: MenuComponentsProps) {
         <TouchableOpacity
           onPress={() =>
             navigation.navigate('ItineraryDetails', {
-              type: TypeItenaryEnum.restaurant,
+              type: TypeItenaryEnum.restaurants,
             })
           }>
           <Center justifyContent="center" alignItems="center">

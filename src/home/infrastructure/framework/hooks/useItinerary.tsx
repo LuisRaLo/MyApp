@@ -1,9 +1,9 @@
-import {useEffect, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import {DependenceInjection} from '../../../../shared/infrastructure/factories/DependenceInjection';
 import {
   IItinerary,
   TypeItenaryEnum,
-} from '../../../domain/repository/ItineraryRepository';
+} from '../../../../shared/domain/repository/ItineraryRepository';
 
 export default function useItinerary(type: TypeItenaryEnum) {
   const itineraryRepository = DependenceInjection.itineraryRepository();
@@ -14,20 +14,27 @@ export default function useItinerary(type: TypeItenaryEnum) {
 
   const [itinerary, setItinerary] = useState<IItinerary[]>([]);
 
-  async function getItinerary() {
+  const getItinerary = useCallback(async () => {
     const itineraryReq = await itineraryRepository.getItinerary(type);
-    setItinerary(itineraryReq);
-  }
+    const itineraryData: IItinerary[] = [];
+    for (const key in itineraryReq) {
+      if (Object.prototype.hasOwnProperty.call(itineraryReq, key)) {
+        itineraryData.push(itineraryReq[key]);
+      }
+    }
+
+    setItinerary(itineraryData);
+  }, [itineraryRepository, type]);
 
   const titleToSpanish = (type: string) => {
     switch (type) {
-      case TypeItenaryEnum.location:
+      case TypeItenaryEnum.places:
         return 'Ubicación';
-      case TypeItenaryEnum.enterprise:
+      case TypeItenaryEnum.enterprises:
         return 'Empresas';
-      case TypeItenaryEnum.event:
+      case TypeItenaryEnum.events:
         return 'Eventos';
-      case TypeItenaryEnum.restaurant:
+      case TypeItenaryEnum.restaurants:
         return 'Restaurantes';
       default:
         return '';

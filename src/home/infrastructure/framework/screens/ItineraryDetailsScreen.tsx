@@ -3,9 +3,8 @@ import {StackScreenProps} from '@react-navigation/stack';
 import {WelcomeStackParamList} from '../../../../shared/infrastructure/framework/router/welcome.route';
 import useItinerary from '../hooks/useItinerary';
 import BackgroundComponent from '../../../../shared/infrastructure/framework/components/BackgroundComponent';
-import {Center, Text, VStack} from '@gluestack-ui/themed';
+import {Center, Text} from '@gluestack-ui/themed';
 import ItineraryListComponent from '../components/ItineraryListComponent';
-import {TypeItenaryEnum} from '../../../domain/repository/ItineraryRepository';
 import BackArrowComponent from '../components/BackArrowComponent';
 
 interface Props

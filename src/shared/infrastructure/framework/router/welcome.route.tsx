@@ -1,6 +1,6 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../../../../home/infrastructure/framework/screens/HomeScreen';
-import { TypeItenaryEnum } from '../../../../home/domain/repository/ItineraryRepository';
+import { TypeItenaryEnum } from '../../../domain/repository/ItineraryRepository';
 import ItineraryDetailsScreen from '../../../../home/infrastructure/framework/screens/ItineraryDetailsScreen';
 
 export type WelcomeStackParamList = {

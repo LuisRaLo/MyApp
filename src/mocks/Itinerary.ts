@@ -1,4 +1,4 @@
-import {IItinerary} from '../home/domain/repository/ItineraryRepository';
+import {IItinerary} from '../shared/domain/repository/ItineraryRepository';
 
 const itineraryLocation: IItinerary[] = [
   {

@@ -1,27 +1,18 @@
 import ItineraryRepository, {
   IItinerary,
   TypeItenaryEnum,
-} from '../../../home/domain/repository/ItineraryRepository';
-import {
-  getItineraryEnterprise,
-  getItineraryEvent,
-  getItineraryLocation,
-  getItineraryRestaurant,
-} from '../../../mocks/Itinerary';
+} from '../../domain/repository/ItineraryRepository';
+
+import firestore from '@react-native-firebase/firestore';
 
 export default class ItineraryRepositoryImpl implements ItineraryRepository {
   public async getItinerary(type: TypeItenaryEnum): Promise<IItinerary[]> {
-    switch (type) {
-      case TypeItenaryEnum.location:
-        return getItineraryLocation();
-      case TypeItenaryEnum.event:
-        return getItineraryEvent();
-      case TypeItenaryEnum.enterprise:
-        return getItineraryEnterprise();
-      case TypeItenaryEnum.restaurant:
-        return getItineraryRestaurant();
-      default:
-        return [];
+    const data = await firestore().collection('itinerary').doc(type).get();
+
+    if (data.exists) {
+      return data.data() as IItinerary[];
     }
+
+    return [];
   }
 }

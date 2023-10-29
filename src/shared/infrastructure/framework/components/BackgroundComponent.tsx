@@ -1,9 +1,8 @@
-import React, {Fragment, ReactNode, useState} from 'react';
+import React, {Fragment, ReactNode} from 'react';
 import {
   KeyboardAvoidingView,
   ScrollView,
   StatusBar,
-  Text,
   VStack,
 } from '@gluestack-ui/themed';
 import {FlexAlignType, Platform} from 'react-native';

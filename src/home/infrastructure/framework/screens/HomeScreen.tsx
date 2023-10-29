@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {VStack, Center, Heading, Text, Image} from '@gluestack-ui/themed';
 import {StackScreenProps} from '@react-navigation/stack';
 import {WelcomeStackParamList} from '../../../../shared/infrastructure/framework/router/welcome.route';
