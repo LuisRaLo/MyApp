@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:327821887779:android:2acf7148239da7ffc52496",
+        "android_client_info": {
+          "package_name": "cl.andresm.jardintrip"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBFCldiRw7Gs_NGpuFF1qTZd8GL87DKGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:327821887779:android:37e27106b9380866c52496",
         "android_client_info": {
           "package_name": "com.myapp"
