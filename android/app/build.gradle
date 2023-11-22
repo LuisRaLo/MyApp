@@ -80,9 +80,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.myapp"
+    namespace "cl.andresm.jardintrip"
     defaultConfig {
-        applicationId "com.myapp"
+        applicationId "cl.andresm.jardintrip"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
